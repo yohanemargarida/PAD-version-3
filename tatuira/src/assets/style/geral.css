@@ -1,0 +1,23 @@
+    @font-face {
+        src: url(../fonts/Kastelov-Axiforma-Bold.otf);
+        font-family: 'Kastelov Axiforma';    
+        font-weight: 700;
+    } 
+    @font-face {
+        src: url(../fonts/Kastelov-Axiforma-Black.otf);
+        font-family: 'Kastelov Axiforma';    
+        font-weight: 900;
+    } 
+    @font-face {
+        src: url(../fonts/Kastelov-Axiforma-Light.otf);
+        font-family: 'Kastelov Axiforma';    
+        font-weight: normal;
+    } 
+
+    html {
+    	font-family: 'Kastelov Axiforma', cursive; 
+    	margin: 0;
+    }
+
+  
+
