@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import Background from "../components/layout/Background";
+import Background from "../layout/Background";
 
 export default {
   components: {
@@ -45,8 +45,13 @@ export default {
 </script>
 
 <style scoped>
+
 .page-details {
   background: #f1f1e9;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .left-box {
   width: 48%;
@@ -55,8 +60,6 @@ export default {
 .right-box {
   width: 40%;
   height: 100%;
-}
-.right-box {
   overflow: hidden;
 }
 .topo {

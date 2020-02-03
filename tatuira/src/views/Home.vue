@@ -36,13 +36,13 @@
         </div>
       </div>
 
-      <div class="result" v-if="listTattooersFiltered.length && searched">
+      <div class="result" v-if="searched && hasResult">
         <ul v-for="item in listTattooersFiltered" :key="item.id">
           <li>{{item.name}}</li>
         </ul>
       </div>
 
-      <div class="result" v-else-if="searched && !listTattooersFiltered.length">
+      <div class="result" v-else-if="searched && !hasResult">
         <h4>Nome não encontrado: {{inputName}}</h4>
       </div>
     </div>
@@ -50,39 +50,42 @@
 </template>
 
 <script>
-import Background from "../components/layout/Background";
+import Background from "../layout/Background";
 
 export default {
   components: {
     Background
   },
-  data() {
-    return {
-      inputName: "",
-      searched: false,
-      listTattooers: [
-        {
-          id: 1,
-          name: "Yohane Braga",
-          instagram: "http://www.yohane.com.br",
-          city: "Rio de Janeiro"
-        },
-        {
-          id: 2,
-          name: "Brian Gomes",
-          instagram: "http://www.instagram.com/briangomes/",
-          city: "São Paulo"
-        },
-        {
-          id: 4,
-          name: "Chiquinho Gomes",
-          instagram: "https://www.instagram.com/chiquinhogtattoo",
-          city: "São Paulo"
-        }
-      ]
-    };
-  },
+  
   computed: {
+
+    inputName: {
+      get() {
+        return this.$store.state.inputName
+      },
+      set(payload) {
+        this.$store.dispatch("setInputName", payload)
+      }
+    },
+
+    searched: {
+      get() {
+        return this.$store.state.searched
+      },
+      set(payload) {
+        this.$store.dispatch("setSearched", payload)
+      }
+    },
+
+    listTattooers: {
+      get() {
+        return this.$store.state.listTattooers
+      },
+      set(payload) {
+        this.$store.dispatch("setListTattooers", payload)
+      }
+    },
+
     listTattooersFiltered() {
       if (this.searched) {
         let filtered = this.listTattooers.filter(tattooer => {
@@ -101,18 +104,24 @@ export default {
       }
       return [];
     }
+
   },
   methods: {
     search() {
-      this.searched = true;
+      this.$store.state.searched = true;
+    },
+    hasResult() {
+      return this.listTattooersFiltered.length;
     }
   },
+
   watch: {
     inputName() {
-      this.searched = false;
+      this.$store.state.searched = false;
     }
   }
 };
+
 </script>
 
 <style lang="scss" scoped>
