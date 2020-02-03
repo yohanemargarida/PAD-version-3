@@ -1,59 +1,61 @@
 <template>
-  <div id="app">
-    <div class="background page-home">
-      <div class="body-border">
-        <div class="left box">
-          <div class="logo">
-            <img src="../assets/img/logo.png" width="50%" />
-          </div>
-          <div class="content-box">
-            <div class="text one">
-              <p>te conectando com os melhores tatuadores.</p>
-            </div>
-            <div class="text two">
-              <p>
-                O
-                <strong>tatuíra</strong> é uma rede que ajuda você a encontrar o melhor artista para
-                fazer sua tatuagem.
-              </p>
-            </div>
-            <div class="search-box">
-              <div class="icon-search">
-                <img src="../assets/img/icon-busca.svg" width="100%" />
-              </div>
-              <input
-                v-model="inputName"
-                type="text"
-                placeholder="digite sua busca"
-                class="input-search"
-              />
-              <button
-                :disabled="!inputName"
-                @click="search"
-                id="send"
-                class="button-search"
-                type="button"
-              >buscar</button>
-            </div>
-          </div>
+  <Background>
+    <div class="page-home">
+      <div class="left box">
+        <div class="logo">
+          <img src="../assets/img/logo.png" width="50%" />
         </div>
-
-        <div class="result" v-if="listTattooersFiltered.length && searched">
-          <ul v-for="item in listTattooersFiltered" :key="item.id">
-            <li>{{item.name}}</li>
-          </ul>
-        </div>
-
-        <div class="result" v-else-if="searched && !listTattooersFiltered.length">
-          <h4>Nome não encontrado: {{inputName}}</h4>
+        <div class="content-box">
+          <div class="text one">
+            <p>te conectando com os melhores tatuadores.</p>
+          </div>
+          <div class="text two">
+            <p>
+              O
+              <strong>tatuíra</strong> é uma rede que ajuda você a encontrar o melhor artista para
+              fazer sua tatuagem.
+            </p>
+          </div>
+          <div class="search-box">
+            <div class="icon-search">
+              <img src="../assets/img/icon-busca.svg" width="100%" />
+            </div>
+            <input
+              v-model="inputName"
+              type="text"
+              placeholder="digite sua busca"
+              class="input-search"
+            />
+            <button
+              :disabled="!inputName"
+              @click="search"
+              class="button-search"
+              type="button"
+            >buscar</button>
+          </div>
         </div>
       </div>
+
+      <div class="result" v-if="listTattooersFiltered.length && searched">
+        <ul v-for="item in listTattooersFiltered" :key="item.id">
+          <li>{{item.name}}</li>
+        </ul>
+      </div>
+
+      <div class="result" v-else-if="searched && !listTattooersFiltered.length">
+        <h4>Nome não encontrado: {{inputName}}</h4>
+      </div>
     </div>
-  </div>
+  </Background>
 </template>
 
 <script>
+import Background from "../components/layout/Background";
+
 export default {
+  components: {
+    Background
+  },
   data() {
     return {
       inputName: "",
@@ -113,9 +115,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
-$primary-color: #00d4bb;
-$font-stack: 'Kastelov Axiforma';
+<style lang="scss" scoped>
 .page-home {
   display: flex;
   background-image: url(../assets/img/fundo3.png);
@@ -197,27 +197,18 @@ $font-stack: 'Kastelov Axiforma';
   background: #00d4bb;
   font-size: 15pt !important;
   font-weight: normal;
-  font-family: $font-stack;
+  font-family: "Kastelov Axiforma";
 }
 strong {
   font-weight: 900;
 }
 ::-webkit-input-placeholder {
   color: #aaa;
-  font-family: $font-stack;
+  font-family: "Kastelov Axiforma";
   font-weight: normal;
   font-size: 19pt;
 }
 @media (max-width: 768px) {
-  .background {
-    background-size: 500%;
-    background-position: 60%;
-  }
-
-  .body-border {
-    border: 25px solid rgba(0, 212, 187, 0.5);
-    flex-direction: column;
-  }
   .left {
     width: 100%;
     height: 80%;

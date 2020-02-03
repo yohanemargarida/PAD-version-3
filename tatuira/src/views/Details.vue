@@ -1,39 +1,50 @@
 <template>
-  <div>
-    <div class="background page-details">
-      <div class="body-border">
-        <div class="left-box">
-          <div class="topo">
-            <div class="logo">
-              <img src="../assets/img/logo.png" width="50%" />
-            </div>
-            <div class="button-return" id="app1">
+  <Background>
+    <div class="page-details">
+      <div class="left-box">
+        <div class="topo">
+          <div class="logo">
+            <img src="../assets/img/logo.png" width="50%" />
+          </div>
+          <router-link :to="{ name: 'home' }" tag="button" class="button-return">
+            <div >
               <img src="../assets/img/icon-voltar.svg" />
-              <button id="send">voltar</button>
+              voltar
             </div>
-          </div>
-          <div class="details-tattooer">
-            <h1 class="name">Yohane Braga</h1>
-            <p class="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-              luctus urna vel eleifend convallis. Aenean sed purus neque. Sed ante ipsum, volutpat et ex
-              in, scelerisque ullamcorper sem. Pellentesque ut porta quam, sed commodo neque. Curabitur
-              elit mauris, accumsan id mattis feugiat, aliquam at justo. Vivamus id sem a quam efficitur
-              interdum
-            </p>
-            <p class="city">cidade</p>
-            <a href class="website">website</a>
-          </div>
+          </router-link>
         </div>
-        <div class="right-box">
-          <img src="../assets/img/yohane-braga.jpg" width="100%" />
+        <div class="resume-tattooer">
+          <h1 class="name">Yohane Braga</h1>
+          <p class="description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            luctus urna vel eleifend convallis. Aenean sed purus neque. Sed ante ipsum, volutpat et ex
+            in, scelerisque ullamcorper sem. Pellentesque ut porta quam, sed commodo neque. Curabitur
+            elit mauris, accumsan id mattis feugiat, aliquam at justo. Vivamus id sem a quam efficitur
+            interdum
+          </p>
+          <p class="city">cidade</p>
+          <a href class="website">website</a>
         </div>
       </div>
+
+      <div class="right-box">
+        <img src="../assets/img/yohane-braga.jpg" width="100%" />
+      </div>
     </div>
-  </div>
+  </Background>
 </template>
 
-<style>
+<script>
+import Background from "../components/layout/Background";
+
+export default {
+  components: {
+    Background
+  }
+};
+</script>
+
+<style scoped>
 .page-details {
   background: #f1f1e9;
 }
@@ -85,7 +96,7 @@
   font-weight: normal;
   font-family: "Kastelov Axiforma", cursive;
 }
-.details-tattooer {
+.resume-tattooer {
   width: 80%;
   height: 70%;
   margin-left: 15%;
