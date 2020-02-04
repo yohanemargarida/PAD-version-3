@@ -1,36 +1,208 @@
-    @font-face {
-        src: url(./assets/fonts/Kastelov-Axiforma-Bold.otf);
-        font-family: 'Kastelov Axiforma';
-        font-weight: 700;
+/* <----------- Global -----------> */
+
+@font-face {
+    src: url(./assets/fonts/Kastelov-Axiforma-Bold.otf);
+    font-family: 'Kastelov Axiforma';
+    font-weight: 700;
+}
+
+@font-face {
+    src: url(./assets/fonts/Kastelov-Axiforma-Black.otf);
+    font-family: 'Kastelov Axiforma';
+    font-weight: 900;
+}
+
+@font-face {
+    src: url(./assets/fonts/Kastelov-Axiforma-Light.otf);
+    font-family: 'Kastelov Axiforma';
+    font-weight: normal;
+}
+
+html {
+    font-family: "Kastelov Axiforma";
+    margin: 0;
+}
+
+strong {
+    font-weight: 900;
+}
+
+
+/* <----------- Page Home -----------> */
+
+.home-page {
+    display: flex;
+    background-image: url(./assets/img/fundo3.png);
+    background-size: 127%;
+    background-repeat: no-repeat;
+    background-position: 80% 35%;
+}
+
+.home-content-box {
+    margin-left: 2.2%;
+    height: 70%;
+    margin-top: 8%;
+    width: 43%;
+    display: block;
+}
+
+.home-logo {
+    width: 98%;
+    height: 20%;
+}
+
+.home-text-box {
+    width: 83%;
+    height: 80%;
+    margin-left: 17%;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-brand-description-one {
+    width: 80%;
+    height: 45%;
+    color: #00d4bb;
+    font-size: 45pt;
+    line-height: 36pt;
+    font-weight: 900;
+    padding-top: 3%;
+}
+
+.home-brand-description-two {
+    width: 68%;
+    height: 22%;
+    top: 0;
+    font-size: 20pt;
+    font-weight: 700;
+    line-height: 20pt;
+    letter-spacing: 0px;
+    word-spacing: 0.5pt;
+}
+
+@media (max-width: 768px) {
+    .home-content-box {
+        width: 100%;
+        height: 80%;
     }
-    
-    @font-face {
-        src: url(./assets/fonts/Kastelov-Axiforma-Black.otf);
-        font-family: 'Kastelov Axiforma';
-        font-weight: 900;
+    .home-brand-description-one {
+        font-size: 20pt;
+        line-height: 20pt;
+        padding-top: 0%;
     }
-    
-    @font-face {
-        src: url(./assets/fonts/Kastelov-Axiforma-Light.otf);
-        font-family: 'Kastelov Axiforma';
-        font-weight: normal;
+    .home-brand-description-two {
+        font-size: 15pt;
+        line-height: 15pt;
+        text-shadow: 0.1em 0.1em 0.5px #aaa;
     }
-    
-    $primary-color: #00d4bb;
-    $font-stack: 'Kastelov Axiforma';
-    html {
-        font-family: "Kastelov Axiforma";
-        margin: 0;
+}
+
+@media(min-width:1024px) {
+    .body-border {
+        border: 26px solid rgba(0, 212, 187, 0.5);
     }
-    
-    @media(max-width:1024px) {
-        .body-border {
-            border: 26px solid rgba(0, 212, 187, 0.5);
-        }
-        .body-border {
-            border: 26px solid rgba(0, 212, 187, 0.5);
-        }
-        .background {
-            background-position: 80% 31%;
-        }
+    .background {
+        background-position: 80% 31%;
     }
+    .home-brand-description-one {
+        font-size: 31pt;
+        line-height: 29pt;
+    }
+    .home-brand-description-two {
+        font-size: 14pt;
+        line-height: 15pt;
+    }
+}
+
+
+/* <----------- Page Details -----------> */
+
+.details-page {
+    background: #f1f1e9;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.details-resume-box-left {
+    width: 48%;
+    height: 100%;
+}
+
+.details-resume-box-right {
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.details-topo {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5%;
+    padding: 1%;
+}
+
+.details-lopo {
+    width: 50%;
+    height: auto;
+}
+
+.details-return-button {
+    width: 17%;
+    height: 40px;
+    border: 2px solid #00d4bb;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 10px;
+}
+
+.details-return-button img {
+    filter: invert(70%);
+    width: 20%;
+    margin-left: 6%;
+}
+
+.details-return-button button {
+    width: 100%;
+    height: 100%;
+    color: #888782;
+    border: none;
+    background: transparent;
+    font-size: 11pt !important;
+    font-weight: normal;
+    font-family: "Kastelov Axiforma", cursive;
+}
+
+.details-tattooer {
+    width: 80%;
+    height: 70%;
+    margin-left: 15%;
+    position: relative;
+    top: 0px;
+}
+
+.details-tattooer-name {
+    width: 50%;
+    font-size: 2.9rem;
+    color: #00d4bb;
+    font-weight: 700;
+    line-height: 44px;
+}
+
+.details-tattooer-description {
+    font-size: 0.9rem;
+}
+
+.details-tattooer-city {
+    font-weight: 700;
+}
+
+.details-tattooer-website {
+    color: #00d4bb;
+    font-weight: 700;
+}
