@@ -14,9 +14,6 @@ const routes = [{
         name: 'detalhes',
         component: () =>
             import ('../views/Details.vue'),
-        children: [
-
-        ]
     },
     {
         path: '*',

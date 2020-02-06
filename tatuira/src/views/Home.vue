@@ -1,9 +1,9 @@
 <template>
   <Background>
     <div class="home-page">
-      <div class="home-content-box">
-        <div class="home-logo">
-          <img src="../assets/img/logo.png" width="50%" />
+      <div class="content home-content-box">
+        <div>
+        <Logo />
         </div>
         <div class="home-text-box">
           <div class="home-brand-description-one">
@@ -25,12 +25,14 @@
 </template>
 
 <script>
+import Logo from "../layout/Logo";
 import Background from "../layout/Background";
 import InputSearch from "../components/InputSearch";
 import ResultSearch from "../components/ResultSearch";
 
 export default {
   components: {
+    Logo,
     Background,
     InputSearch,
     ResultSearch

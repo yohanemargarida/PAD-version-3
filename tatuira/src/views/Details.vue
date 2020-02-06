@@ -1,16 +1,14 @@
 <template>
   <Background>
     <div class="details-page">
-      <div class="details-resume-box-left">
+      <div class="content details-content-box-left">
         <div class="details-topo">
-          <div class="details-logo">
-            <img src="../assets/img/logo.png" width="50%" />
-          </div>
+          <Logo logo />
           <router-link :to="{ name: 'home' }" tag="button" class="details-return-button">
-            <div >
+            
               <img src="../assets/img/icon-voltar.svg" />
               voltar
-            </div>
+            
           </router-link>
         </div>
         <div class="details-tattooer">
@@ -24,6 +22,7 @@
           </p>
           <p class="details-tattooer-city">cidade</p>
           <a href class="details-tattooer-website">website</a>
+          <p>rota {{$route.query.id}} // {{getRouteId()}}</p>
         </div>
       </div>
 
@@ -35,11 +34,24 @@
 </template>
 
 <script>
+import Logo from "../layout/Logo";
 import Background from "../layout/Background";
 
 export default {
   components: {
+    Logo,
     Background
+  },
+  computed: {
+    listTattooersFiltered() {
+      return this.$store.getters.listTattooersFiltered;
+    }
+  },
+  methods: {
+    getRouteId() {
+      var id = this.$route.query.id;
+      return id;
+    }
   }
 };
 </script>
