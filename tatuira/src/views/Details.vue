@@ -5,29 +5,22 @@
         <div class="details-topo">
           <Logo logo />
           <router-link :to="{ name: 'home' }" tag="button" class="details-return-button">
-            
-              <img src="../assets/img/icon-voltar.svg" />
-              voltar
-            
+            <img src="../assets/img/icon-voltar.svg" />
+            <span>Voltar</span>
           </router-link>
         </div>
         <div class="details-tattooer">
-          <h1 class="details-tattooer-name">Yohane Braga</h1>
-          <p class="details-tattooer-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            luctus urna vel eleifend convallis. Aenean sed purus neque. Sed ante ipsum, volutpat et ex
-            in, scelerisque ullamcorper sem. Pellentesque ut porta quam, sed commodo neque. Curabitur
-            elit mauris, accumsan id mattis feugiat, aliquam at justo. Vivamus id sem a quam efficitur
-            interdum
-          </p>
-          <p class="details-tattooer-city">cidade</p>
-          <a href class="details-tattooer-website">website</a>
-          <p>rota {{$route.query.id}} // {{getRouteId()}}</p>
+          <h1 class="details-tattooer-name">{{tattooer.name}}</h1>
+          <p class="details-tattooer-description">{{tattooer.description}}</p>
+          <p class="details-tattooer-city">{{tattooer.city}}</p>
+          <a :href="tattooer.instagram" class="details-tattooer-website">{{tattooer.instagram}}</a>
+          <p>rota {{$route.query.id}}</p>
         </div>
       </div>
 
-      <div class="details-resume-box-right">
-        <img src="../assets/img/yohane-braga.jpg" width="100%" />
+      <div class="details-resume-box-right" >
+        <img :src="require('../assets/img/' + tattooer.picture)" width="100%" />
+<!--<img src="../assets/img/yohane-braga.jpg"/>-->
       </div>
     </div>
   </Background>
@@ -43,14 +36,19 @@ export default {
     Background
   },
   computed: {
-    listTattooersFiltered() {
-      return this.$store.getters.listTattooersFiltered;
+    listTattooers() {
+      return this.$store.state.listTattooers;
+    },
+    tattooer() {
+      let idFiltered = this.$store.state.listTattooers.find(tattooer => {
+        return tattooer.id == this.$route.query.id;
+      });
+      return idFiltered;
     }
   },
-  methods: {
-    getRouteId() {
-      var id = this.$route.query.id;
-      return id;
+  data() {
+    return {
+      url: '../yohane-braga.jpg' 
     }
   }
 };

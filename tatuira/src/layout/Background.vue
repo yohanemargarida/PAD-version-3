@@ -1,7 +1,9 @@
 <template>
   <div class="background">
     <div class="body-border">
-      <slot></slot>
+      <slot>
+
+      </slot>
     </div>
   </div>
 </template>
@@ -26,10 +28,9 @@ export default {
 .body-border {
   width: 100%;
   height: 100%;
-  border: 32px solid rgba(0, 212, 187, 0.5);
+  border: 32px solid rgba(73, 208, 178, 0.6);
   box-sizing: border-box;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -40,7 +41,7 @@ export default {
   }
 
   .body-border {
-    border: 25px solid rgba(0, 212, 187, 0.5);
+    border: 25px solid rgba(73, 208, 178, 0.6);
     flex-direction: column;
   }
 }

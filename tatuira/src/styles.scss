@@ -45,13 +45,12 @@ strong {
 .content {
     margin-left: 2.2%;
     height: 70%;
-    margin-top: 7%;
-    width: 43%;
+    margin-top: 5%;
 }
 
 .home-content-box {
     display: block;
-    border: red 1px solid;
+    width: 43%;
 }
 
 .home-text-box {
@@ -130,7 +129,7 @@ strong {
 
 .details-page .logo {
     height: 120px;
-    width: 50%;
+    width: 43%;
     box-sizing: border-box;
 }
 
@@ -146,39 +145,33 @@ strong {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: gray 1px solid;
 }
 
 .details-content-box-left {
-    border: blue 1px solid;
+    width: 50%;
 }
 
 .details-return-button {
-    width: 17%;
-    height: 40px;
-    border: 2px solid #00d4bb;
+    width: 18%;
+    height: 45px;
+    border: 2px solid #49d0b2;
     background: transparent;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     position: relative;
-    top: 10px;
+    top: 50px;
+    padding-left: 4%;
 }
 
 .details-return-button img {
     filter: invert(70%);
     width: 20%;
-    margin-left: 6%;
 }
 
-.details-return-button button {
-    width: 100%;
-    height: 100%;
-    color: #888782;
-    border: none;
-    background: transparent;
-    font-size: 11pt !important;
-    font-weight: normal;
-    font-family: "Kastelov Axiforma", cursive;
+.details-return-button span {
+    left: 20px;
+    position: relative;
+    top: 5px;
 }
 
 .details-tattooer {
